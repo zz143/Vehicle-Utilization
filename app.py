@@ -233,10 +233,10 @@ def createOrder():
 @app.route('/get_vehicle_distribution', methods=['GET'])
 def get_vehicle_distribution():
     req = request.args.get('slot')
-
-    if(req>4 or req<=0):
+    
+    if(req>'4' or req<='0'):
         return 'not a valid slot'
-        
+
     unassigned_orders = []
     assigned_order = []
     vehicle_used = []
